@@ -1,3 +1,0 @@
-/home/dwindsor/src/github.com/elftoolchain/test/libelf/scwx/build/CMakeFiles/rebuild_cache.dir
-/home/dwindsor/src/github.com/elftoolchain/test/libelf/scwx/build/CMakeFiles/edit_cache.dir
-/home/dwindsor/src/github.com/elftoolchain/test/libelf/scwx/build/CMakeFiles/gelf-getnote.dir
