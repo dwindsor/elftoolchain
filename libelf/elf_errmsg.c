@@ -64,7 +64,7 @@ static const char *_libelf_errors[] = {
 const char *
 elf_errmsg(int error)
 {
-	int oserr;
+	/* int oserr; */
 
 	if (error == ELF_E_NONE &&
 	    (error = LIBELF_PRIVATE(error)) == 0)
@@ -72,16 +72,17 @@ elf_errmsg(int error)
 	else if (error == -1)
 	    error = LIBELF_PRIVATE(error);
 
-	oserr = error >> LIBELF_OS_ERROR_SHIFT;
+	/* oserr = error >> LIBELF_OS_ERROR_SHIFT; */
 	error &= LIBELF_ELF_ERROR_MASK;
 
 	if (error < ELF_E_NONE || error >= ELF_E_NUM)
 		return _libelf_errors[ELF_E_NUM];
+	/*
 	if (oserr) {
-		(void) snprintf((char *) LIBELF_PRIVATE(msg),
-		    sizeof(LIBELF_PRIVATE(msg)), "%s: %s",
+		(void) sprintf((char *) LIBELF_PRIVATE(msg), "%s: %s",
 		    _libelf_errors[error], strerror(oserr));
 		return (const char *)&LIBELF_PRIVATE(msg);
 	}
+	*/
 	return _libelf_errors[error];
 }

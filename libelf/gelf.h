@@ -43,6 +43,7 @@ typedef Elf64_Dyn	GElf_Dyn;	/* ".dynamic" section entries */
 typedef Elf64_Ehdr	GElf_Ehdr;	/* ELF header */
 typedef Elf64_Phdr	GElf_Phdr;	/* Program header */
 typedef Elf64_Shdr	GElf_Shdr;	/* Section header */
+typedef Elf64_Nhdr	GElf_Nhdr;	/* Note header */
 typedef Elf64_Sym	GElf_Sym;	/* Symbol table entries */
 typedef Elf64_Rel	GElf_Rel;	/* Relocation entries */
 typedef Elf64_Rela	GElf_Rela;	/* Relocation entries with addend */
@@ -76,6 +77,8 @@ size_t		gelf_fsize(Elf *_elf, Elf_Type _type, size_t _count,
 int		gelf_getclass(Elf *_elf);
 GElf_Dyn	*gelf_getdyn(Elf_Data *_data, int _index, GElf_Dyn *_dst);
 GElf_Ehdr	*gelf_getehdr(Elf *_elf, GElf_Ehdr *_dst);
+size_t 		gelf_getnote(Elf_Data *data, size_t offset, Elf_Note *result,
+                 size_t *name_offset, size_t *desc_offset);
 GElf_Phdr	*gelf_getphdr(Elf *_elf, int _index, GElf_Phdr *_dst);
 GElf_Rel	*gelf_getrel(Elf_Data *_src, int _index, GElf_Rel *_dst);
 GElf_Rela	*gelf_getrela(Elf_Data *_src, int _index, GElf_Rela *_dst);
