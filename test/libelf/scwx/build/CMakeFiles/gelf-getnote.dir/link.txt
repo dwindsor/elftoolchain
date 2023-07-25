@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/gelf-getnote.dir/gelf-getnote.c.o  -o gelf-getnote   -L/home/dwindsor/src/github.com/elftoolchain/test/libelf/scwx/../../../libelf  -Wl,-rpath,/home/dwindsor/src/github.com/elftoolchain/test/libelf/scwx/../../../libelf /home/dwindsor/src/github.com/elftoolchain/libelf/libelf.a 
