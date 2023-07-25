@@ -10,6 +10,7 @@
 size_t gelf_getnote(Elf_Data *data, size_t offset, Elf_Note *result, size_t *name_offset, size_t *desc_offset) {
 
 
+    fprintf(stderr, "in gelf_getnote\n");
     if (data == NULL)
     {
 	    fprintf(stderr, "data is null\n");
@@ -29,13 +30,11 @@ size_t gelf_getnote(Elf_Data *data, size_t offset, Elf_Note *result, size_t *nam
         }
 
 
-
-
     fprintf(stderr, "gelf_getnote: up in here\n");
     fprintf(stderr, "sizeof(GELf_Nhdr)=%ld\n", sizeof(GElf_Nhdr));
     fprintf(stderr, "d=%p\n", d);
-    fprintf(stderr, "sizeof(d)=%ld\n", sizeof(d->d_data));
-    fprintf(stderr, "d->d_size=%ld\n", d->d_data.d_size);
+    //fprintf(stderr, "sizeof(d)=%ld\n", sizeof(d->d_data));
+    //fprintf(stderr, "d->d_size=%ld\n", d->d_data.d_size);
 
     //fprintf(stderr, "gelf_getnote: 1, data->d_size=%ld, sizeof(GElf_Nhdr)=%ld\n", data->d_size, sizeof(GElf_Nhdr));
     /* Read the NOTE header at the specified offset. */
