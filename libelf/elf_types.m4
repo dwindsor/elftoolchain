@@ -218,6 +218,12 @@ DEFINE_STRUCT(`Elf64_Shdr',
 	`sh_entsize,	XWORD',
 	`_,_'')
 
+DEFINE_STRUCT(`Elf64_Nhdr',
+	``sh_namesz	WORD',
+	`sh_descsz	WORD',
+	`sh_type	WORD',
+	`_,_'')
+
 DEFINE_STRUCT(`Elf32_Sym',
 	``st_name,	WORD',
 	`st_value,	ADDR',

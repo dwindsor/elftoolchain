@@ -29,6 +29,7 @@
 #include <libelf.h>
 
 #include "_libelf.h"
+#include <stdio.h>
 
 ELFTC_VCSID("$Id$");
 
@@ -41,13 +42,20 @@ elf_begin(int fd, Elf_Cmd c, Elf *a)
 
 	e = NULL;
 
+	fprintf(stderr, "elf_begin: 0\n");
+
+	/*
 	if (LIBELF_PRIVATE(version) == EV_NONE) {
 		LIBELF_SET_ERROR(SEQUENCE, 0);
 		return (NULL);
 	}
+	*/
+
+	fprintf(stderr, "elf_begin: 1\n");
 
 	switch (c) {
 	case ELF_C_NULL:
+		fprintf(stderr, "elf_begin: switch: ELF_C_NULL case reached\n");
 		return (NULL);
 
 	case ELF_C_WRITE:
@@ -73,12 +81,14 @@ elf_begin(int fd, Elf_Cmd c, Elf *a)
 		 */
 		if (a &&
 		    ((a->e_fd != -1 && a->e_fd != fd) || c != a->e_cmd)) {
+			fprintf(stderr, "elf_begin: 3\n");
 			LIBELF_SET_ERROR(ARGUMENT, 0);
 			return (NULL);
 		}
 		break;
 
 	default:
+		fprintf(stderr, "elf_begin: switch: default case reached\n");
 		LIBELF_SET_ERROR(ARGUMENT, 0);
 		return (NULL);
 

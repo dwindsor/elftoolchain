@@ -35,6 +35,7 @@ SRCS=	elf.c							\
 	gelf_dyn.c						\
 	gelf_ehdr.c						\
 	gelf_getclass.c						\
+	gelf_getnote.c						\
 	gelf_fsize.c						\
 	gelf_move.c						\
 	gelf_phdr.c						\
